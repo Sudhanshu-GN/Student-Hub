@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admission form</title>
+</head>
+<body bgcolor="#808080">
+    <!-- Admission Form -->
+    <h2 id="admission">College Admission Form</h2>
+    <form>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course">
+            <option value="bsc">B.Sc</option>
+            <option value="bcom">B.Com</option>
+            <option value="ba">B.A</option>
+            <option value="btech">B.Tech</option>
+        </select><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other<br><br>
+
+        <label>Preferences:</label><br>
+        <input type="checkbox" name="hostel"> Hostel Facility
+        <input type="checkbox" name="transport"> Transport Facility
+        <input type="checkbox" name="scholarship"> Scholarship Program<br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+</html>
