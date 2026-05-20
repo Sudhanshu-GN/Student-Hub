@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First Page</title>
+        </head>
+        <body>
+            <h1>hey</h1>
+            <h2>ujjawal</h2>
+</body>
+</html>
+
+************************************************************************************************************************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Multimedia Webpage</h1>
+
+    <div class="container">
+        <h2>Image Map Example</h2>
+        <p>Click on different parts of the image:</p>
+        
+        <img src="https://www.w3schools.com/html/pic_trulli.jpg" width="333">
+
+        <map name="imagemap">
+            <area shape="rect" coords="0,0,200,150" href="https://www.google.com" alt="Google" target="_blank">
+            <area shape="rect" coords="200,0,400,150" href="https://www.wikipedia.org" alt="Wikipedia" target="_blank">
+            <area shape="rect" coords="400,0,600,150" href="https://www.youtube.com" alt="YouTube" target="_blank">
+        </map>
+    </div>
+
+    <div class="container">
+        <h2>Audio Example</h2>
+        <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="container">
+        <h2>Video Example</h2>
+        <video width="600" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+</body>
+</html>
