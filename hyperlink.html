@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Webpage Example</title>
+</head>
+<body bgcolor="#f0f8ff">
+
+    <marquee behavior="scroll" direction="left" bgcolor="lightblue">
+        Welcome to Our College Portal - Explore, Learn, and Apply!
+    </marquee>
+
+    <!-- Heading -->
+    <h1 align="center">College Web Portal</h1>
+
+    <!-- Navigation Links -->
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="#Home">page</a></li>
+        <li><a href="#timetble">Page2</a></li>
+        <li><a href="#admissionform">Page3</a></li>
+    </ul>
+
+    <h2 id="home">Home</h2>
+    <p>Welcome to our college website. Explore our facilities below:</p>
+
+    <img src="images.jpg" usemap="#campusmap" alt="Campus">
+    <map name="campusmap">
+        <area shape="rect" coords="0,0,200,150" href="#home" alt="Library">
+        <area shape="rect" coords="200,0,400,150" href="#timetable" alt="Classrooms">
+        <area shape="rect" coords="400,0,600,150" href="#admission" alt="Admissions">
+    </map>
+
+    <h2>Media</h2>
+    <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br><br>
+    <video width="400" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    
+    <!-- Time-Table -->
+    <h2 id="timetable">Class Time-Table</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Math</td>
+            <td>Physics</td>
+            <td>Chemistry</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>English</td>
+            <td>Biology</td>
+            <td>Computer</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Math</td>
+            <td>Physics</td>
+            <td>Sports</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>Computer</td>
+            <td>Biology</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>Chemistry</td>
+            <td>Math</td>
+            <td>Arts</td>
+        </tr>
+    </table>
+
+    <!-- Admission Form -->
+    <h2 id="admission">Admission Form</h2>
+    <form>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course">
+            <option value="bsc">B.Sc</option>
+            <option value="bcom">B.Com</option>
+            <option value="ba">B.A</option>
+            <option value="btech">B.Tech</option>
+        </select><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other<br><br>
+
+        <label>Preferences:</label><br>
+        <input type="checkbox" name="hostel"> Hostel Facility
+        <input type="checkbox" name="transport"> Transport Facility
+        <input type="checkbox" name="scholarship"> Scholarship Program<br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+</html>
