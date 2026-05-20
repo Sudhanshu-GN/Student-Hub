@@ -1,0 +1,252 @@
+REPLACE COMPLETE style.css WITH THIS CODE
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f1f1f1;
+}
+
+
+/* HEADER */
+
+header{
+  background:#111827;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:18px;
+}
+
+nav a:hover{
+  color:#00bfff;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+  background:linear-gradient(to right,#111827,#2563eb);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1{
+  font-size:50px;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:22px;
+}
+
+
+/* TOP COLOR BOXES */
+
+.top-boxes{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  padding:20px;
+}
+
+.box{
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:22px;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:scale(1.03);
+}
+
+.pink{
+  background:#ff0080;
+}
+
+.blue{
+  background:#004aad;
+}
+
+.green{
+  background:green;
+}
+
+.purple{
+  background:#bb00ff;
+}
+
+.orange{
+  background:orangered;
+}
+
+.teal{
+  background:teal;
+}
+
+.red{
+  background:darkred;
+}
+
+.magenta{
+  background:#d10072;
+}
+
+
+/* MAIN SECTIONS */
+
+.main-sections{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:20px;
+}
+
+.section-box{
+  background:white;
+  border:2px solid #b3003c;
+}
+
+.section-box h2{
+  background:#b3003c;
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-size:35px;
+}
+
+.section-box ul{
+  padding:20px;
+}
+
+.section-box ul li{
+  margin-bottom:20px;
+  color:#8b0000;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+  line-height:1.5;
+}
+
+.section-box ul li:hover{
+  color:blue;
+}
+
+
+/* LOGIN & SIGNUP */
+
+.form-box{
+  width:350px;
+  background:white;
+  margin:80px auto;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+.form-box h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.form-box input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+}
+
+.form-box button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+
+/* ADMIN PANEL */
+
+.admin-panel{
+  width:70%;
+  margin:50px auto;
+  background:white;
+  padding:30px;
+  border-radius:10px;
+}
+
+.admin-panel input,
+.admin-panel textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+}
+
+.admin-panel button{
+  background:#111827;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  cursor:pointer;
+}
+
+
+/* FOOTER */
+
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:900px){
+
+.top-boxes{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.main-sections{
+  grid-template-columns:1fr;
+}
+
+.hero h1{
+  font-size:35px;
+}
+
+.section-box h2{
+  font-size:28px;
+}
+
+.box{
+  font-size:18px;
+}
+
+}
