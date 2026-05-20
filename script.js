@@ -1,25 +1,54 @@
-let currentInput = "";
+let activeInput = 'num1';
 
-function appendNumber(number) {
-  currentInput += number;
-  document.getElementById("display").innerText = currentInput;
+function addNumber(number) {
+  let input = document.getElementById(activeInput);
+  input.value += number;
 }
 
-function chooseOperator(operator) {
-  currentInput += operator;
-  document.getElementById("display").innerText = currentInput;
-}
+document.getElementById("num1").addEventListener("click", function() {
+  activeInput = 'num1';
+});
 
-function calculate() {
-  try {
-    currentInput = eval(currentInput).toString();
-    document.getElementById("display").innerText = currentInput;
-  } catch (error) {
-    document.getElementById("display").innerText = "Error";
+document.getElementById("num2").addEventListener("click", function() {
+  activeInput = 'num2';
+});
+
+function calculate(operator) {
+
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+
+  let result;
+
+  if (isNaN(num1) || isNaN(num2)) {
+    document.getElementById("resultBox").innerText = "Enter Numbers";
+    return;
   }
+
+  switch(operator) {
+    case '+':
+      result = num1 + num2;
+      break;
+
+    case '-':
+      result = num1 - num2;
+      break;
+
+    case '*':
+      result = num1 * num2;
+      break;
+
+    case '/':
+      result = num2 !== 0 ? num1 / num2 : 'Error';
+      break;
+  }
+
+  document.getElementById("resultBox").innerText =
+    num1 + " " + operator + " " + num2 + " = " + result;
 }
 
-function clearDisplay() {
-  currentInput = "";
-  document.getElementById("display").innerText = "0";
+function clearAll() {
+  document.getElementById("num1").value = "";
+  document.getElementById("num2").value = "";
+  document.getElementById("resultBox").innerText = "Result = 0";
 }

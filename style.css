@@ -10,61 +10,90 @@ body {
 }
 
 .calculator {
+  width: 350px;
   border: 4px solid #d4ff00;
-  padding: 20px;
   border-radius: 20px;
-  width: 320px;
+  padding: 20px;
   background: #3b4252;
-  box-shadow: 0 0 20px rgba(212, 255, 0, 0.3);
+  box-shadow: 0 0 20px rgba(212,255,0,0.3);
 }
 
 h1 {
-  color: #d4ff00;
   text-align: center;
+  color: #d4ff00;
   margin-bottom: 20px;
 }
 
-.display {
-  height: 60px;
-  border: 3px solid #d4ff00;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  color: white;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 15px;
-  background: #222;
+.heading-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  color: #d4ff00;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-.container {
+.calculator-box {
   display: flex;
   gap: 15px;
 }
 
-.numbers {
+.numbers-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  height: 55px;
+  border: 3px solid #d4ff00;
+  border-radius: 15px;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.number-pad {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  flex: 1;
 }
 
-.operators {
+.zero-btn {
+  grid-column: span 3;
+  width: 100%;
+}
+
+.result-box {
+  height: 60px;
+  border: 3px solid #d4ff00;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  background: #222;
+}
+
+.operator-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 button {
-  height: 60px;
+  width: 70px;
+  height: 55px;
   border: 3px solid #d4ff00;
   border-radius: 15px;
   background: transparent;
-  color: #fff;
+  color: white;
   font-size: 24px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 button:hover {
@@ -72,23 +101,13 @@ button:hover {
   color: black;
 }
 
-.zero {
-  grid-column: span 3;
-}
-
-.bottom-buttons {
-  display: flex;
-  gap: 10px;
+.clear-btn {
+  width: 100%;
   margin-top: 15px;
-}
-
-.bottom-buttons button {
-  flex: 1;
 }
 
 .author {
   text-align: center;
   color: white;
   margin-top: 15px;
-  font-size: 14px;
 }
