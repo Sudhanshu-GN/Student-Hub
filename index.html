@@ -3,131 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ExamHub</title>
+  <title>Student Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="logo">ExamHub</div>
+  <h1>📚 Student Hub</h1>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="posts/jobs.html">Jobs</a>
-    <a href="posts/results.html">Results</a>
-    <a href="posts/admitcard.html">Admit Card</a>
+    <a href="#notes">Notes</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#cgpa">CGPA</a>
+    <a href="#timer">Timer</a>
     <a href="login.html">Login</a>
-    <a href="file:///C:/Users/smart/Desktop/git/student-Hub/ExamPyq/indexpyq.html">PYQ & Study Material</a>
+    <a href="signup.html">Signup</a>
+    <a href="indexpyq.html">Exam PYQ</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Welcome To ExamHub</h1>
-  <p>Latest Jobs, Results & Admit Cards</p>
-</section>
-<!-- TOP NOTICE BOXES -->
 
-<section class="top-boxes">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+class="hero-image">
 
-<div class="box pink">BPSC 72nd Pre Apply Online 2026</div>
+<h2>All Study Tools In One Place</h2>
 
-<div class="box blue">RRB ALP Apply Online 2026</div>
-
-<div class="box green">Bihar CET B.Ed Apply Online 2026</div>
-
-<div class="box purple">Top Online Form Job List 2026</div>
-
-<div class="box orange">BPSSC Havildar Instructor Apply Online 2026</div>
-
-<div class="box teal">NTA UGC NET June 2026 Apply Online</div>
-
-<div class="box red">CTET September 2026 Apply Online</div>
-
-<div class="box magenta">CRPF Constable Tradesman Apply Online 2026</div>
+<p>Developed by Sudhanshu Kumar</p>
 
 </section>
 
+<section id="notes" class="card">
 
-<!-- MAIN SECTIONS -->
-
-<section class="main-sections">
-
-<div class="section-box">
-
-<h2>Results</h2>
+<h2>📄 Notes</h2>
 
 <ul>
-<li>Bihar Enforcement SI Result Declared</li>
-<li>UPSSSC Pharmacist Result 2026</li>
-<li>Airforce Agniveer Result Declared</li>
-<li>IB ACIO Final Result 2025</li>
+<li><a href="#">DBMS Notes</a></li>
+<li><a href="#">CN Notes</a></li>
+<li><a href="#">JavaScript Notes</a></li>
 </ul>
 
-</div>
+</section>
 
+<section id="quiz" class="card">
 
-<div class="section-box">
+<h2>🧠 Quiz App</h2>
 
-<h2>Admit Card</h2>
+<div id="quiz-box">
 
-<ul>
-<li>RRB Section Controller Exam Date</li>
-<li>BSEB DELED Admit Card 2026</li>
-<li>Indian Army Admit Card</li>
-<li>UPSSSC Lekhpal Admit Card</li>
-</ul>
+<p id="question"></p>
 
-</div>
-
-
-<div class="section-box">
-
-<h2>Latest Jobs</h2>
-
-<ul>
-<li>AFCAT 02/2026 Online Form</li>
-<li>SBI Apprentice Form 2026</li>
-<li>Railway Technician Online Form</li>
-<li>BOB Apprentice Online Form</li>
-</ul>
+<div id="answers"></div>
 
 </div>
 
 </section>
 
-<section class="cards">
+<section id="cgpa" class="card">
 
-  <div class="card">
-    <h2>Latest Jobs</h2>
-    <p>Check latest government jobs updates.</p>
-  </div>
+<h2>🎓 CGPA Calculator</h2>
 
-  <div class="card">
-    <h2>Results</h2>
-    <p>Latest exam results available here.</p>
-  </div>
+<input type="number" id="g1" placeholder="Semester 1 GPA">
 
-  <div class="card">
-    <h2>Admit Card</h2>
-    <p>Download admit cards instantly.</p>
-  </div>
+<input type="number" id="g2" placeholder="Semester 2 GPA">
+
+<input type="number" id="g3" placeholder="Semester 3 GPA">
+
+<button onclick="calculateCGPA()">Calculate</button>
+
+<h3 id="cgpa-result"></h3>
 
 </section>
 
-<div class="chatbot">
-  <div class="chat-header">AI Help</div>
+<section id="timer" class="card">
 
-  <div id="chat-box"></div>
+<h2>⏳ Study Timer</h2>
 
-  <input type="text" id="userInput" placeholder="Ask something...">
+<h1 id="time">25:00</h1>
 
-  <button onclick="sendMessage()">Send</button>
-</div>
+<button onclick="startTimer()">Start</button>
+
+<button onclick="resetTimer()">Reset</button>
+
+</section>
 
 <footer>
-  <p>© 2026 ExamHub</p>
+<p>© 2026 Student Hub | Author: sudhanshu Kumar</p>
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
