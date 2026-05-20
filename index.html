@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLLEGE WEB PORTAL</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #af8383;
-        }
-        h1 {
-            color: #333;
-        }
-        .container {
-            margin: 20px auto;
-            padding: 20px;
-            background: #8cb87370;
-            width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(80, 115, 168, 0.1);
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chalk Calculator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body bgcolor="#f0f8ff">
+<body> 
 
-    <marquee behavior="scroll" direction="left" bgcolor="lightblue">
-        Welcome to Our College Portal - Explore, Learn, and Apply!
-    </marquee>
+  <div class="calculator">
+    <h1>Calculator</h1>
 
-    <h1 align="center">College web portal</h1>
+    <div class="display" id="display">0</div>
 
-    <!-- Navigation Links -->
     <div class="container">
-        <h2>Home Page Links</h2>
-        <p>
-        <button><a href="file:///C:/Users/smart/Desktop/code/hyperlinkpg.html/page1.html" bgcolor="#836868">Go to Page 1</a></button> <br>
-        <button><a href="file:///C:/Users/smart/Desktop/code/hyperlinkpg.html/page2.html" bgcolor="#6e4c4c">Go to Page 2</a></button> <br>
-        <button><a href="file:///C:/Users/smart/Desktop/code/hyperlinkpg.html/page3.html" bgcolor="#2b1c1c">Go to Page 3</a></button><br>
-        </p>
+
+      <div class="numbers">
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+
+        <button class="zero" onclick="appendNumber('0')">0</button>
+      </div>
+
+      <div class="operators">
+        <button onclick="chooseOperator('+')">+</button>
+        <button onclick="chooseOperator('-')">−</button>
+        <button onclick="chooseOperator('/')">÷</button>
+        <button onclick="chooseOperator('*')">×</button>
+      </div>
+
+    </div>
+    
+    <div class="bottom-buttons">
+      <button onclick="calculate()">=</button>
+      <button onclick="clearDisplay()">C</button>
     </div>
 
+    <p class="author">Made by Sudhanshu Kumar</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
