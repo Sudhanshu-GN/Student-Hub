@@ -10,88 +10,60 @@
 
 <header>
   <h1>📚 Student Hub</h1>
-
   <nav>
     <a href="#notes">Notes</a>
     <a href="#quiz">Quiz</a>
     <a href="#cgpa">CGPA</a>
     <a href="#timer">Timer</a>
-    <a href="login.html">Login</a>
-    <a href="signup.html">Signup</a>
-    <a href="indexpyq.html">Exam PYQ</a>
   </nav>
 </header>
 
 <section class="hero">
-
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-class="hero-image">
-
-<h2>All Study Tools In One Place</h2>
-
-<p>Developed by Sudhanshu Kumar</p>
-
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Student Hub Banner" class="hero-image" height="300">
+  <h2>All Study Tools In One Place</h2>
+  <p>Notes, Quiz, CGPA Calculator & Study Timer</p>
 </section>
 
 <section id="notes" class="card">
-
-<h2>📄 Notes</h2>
-
-<ul>
-<li><a href="#">DBMS Notes</a></li>
-<li><a href="#">CN Notes</a></li>
-<li><a href="#">JavaScript Notes</a></li>
-</ul>
-
+  <h2>📄 Notes Section</h2>
+  <ul>
+    <li><a href="#">Computer Network Notes</a></li>
+    <li><a href="#">DBMS Notes</a></li>
+    <li><a href="#">JavaScript Notes</a></li>
+  </ul>
 </section>
 
 <section id="quiz" class="card">
-
-<h2>🧠 Quiz App</h2>
-
-<div id="quiz-box">
-
-<p id="question"></p>
-
-<div id="answers"></div>
-
-</div>
-
+  <h2>🧠 Quiz App</h2>
+  <div id="quiz-box">
+    <p id="question">Question Loading...</p>
+    <div id="answers"></div>
+    <button onclick="nextQuestion()">Next</button>
+    <h3 id="score"></h3>
+  </div>
 </section>
 
 <section id="cgpa" class="card">
-
-<h2>🎓 CGPA Calculator</h2>
-
-<input type="number" id="g1" placeholder="Semester 1 GPA">
-
-<input type="number" id="g2" placeholder="Semester 2 GPA">
-
-<input type="number" id="g3" placeholder="Semester 3 GPA">
-
-<button onclick="calculateCGPA()">Calculate</button>
-
-<h3 id="cgpa-result"></h3>
-
+  <h2>🎓 CGPA Calculator</h2>
+  <input type="number" id="g1" placeholder="Semester 1 GPA">
+  <input type="number" id="g2" placeholder="Semester 2 GPA">
+  <input type="number" id="g3" placeholder="Semester 3 GPA">
+  <button onclick="calculateCGPA()">Calculate</button>
+  <h3 id="cgpa-result"></h3>
 </section>
 
 <section id="timer" class="card">
-
-<h2>⏳ Study Timer</h2>
-
-<h1 id="time">25:00</h1>
-
-<button onclick="startTimer()">Start</button>
-
-<button onclick="resetTimer()">Reset</button>
-
+  <h2>⏳ Study Timer</h2>
+  <h1 id="time">25:00</h1>
+  <button onclick="startTimer()">Start</button>
+  <button onclick="resetTimer()">Reset</button>
 </section>
 
 <footer>
-<p>© 2026 Student Hub | Author: sudhanshu Kumar</p>
+  <p>© 2026 Student Hub | Developed by sudhanshu Kumar</p>
+  <p class="author">Project Author: sudhanshu Kumar</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>

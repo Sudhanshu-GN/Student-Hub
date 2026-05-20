@@ -1,206 +1,117 @@
-// QUIZ
-
 const quizData = [
-{
-question:"HTML stands for?",
-answers:[
-"Hyper Text Markup Language",
-"Home Tool Markup Language",
-"Hyperlinks Text",
-"None"
-],
-correct:0
-},
-{
-question:"CSS used for?",
-answers:[
-"Styling",
-"Database",
-"Server",
-"Hosting"
-],
-correct:0
-}
+  {
+    question: "HTML stands for?",
+    answers: [
+      "Hyper Text Markup Language",
+      "High Transfer Machine Language",
+      "Home Tool Markup Language",
+      "None"
+    ],
+    correct: 0
+  },
+  {
+    question: "CSS is used for?",
+    answers: [
+      "Database",
+      "Styling",
+      "Programming",
+      "Hosting"
+    ],
+    correct: 1
+  },
+  {
+    question: "JavaScript is?",
+    answers: [
+      "Styling Language",
+      "Database",
+      "Programming Language",
+      "Server"
+    ],
+    correct: 2
+  }
 ];
 
 let currentQuestion = 0;
+let score = 0;
 
-function loadQuestion(){
+function loadQuestion() {
+  const q = quizData[currentQuestion];
+  document.getElementById("question").innerText = q.question;
 
-const q = quizData[currentQuestion];
+  const answersDiv = document.getElementById("answers");
+  answersDiv.innerHTML = "";
 
-document.getElementById("question").innerText = q.question;
+  q.answers.forEach((answer, index) => {
+    const btn = document.createElement("button");
+    btn.innerText = answer;
 
-const answersDiv = document.getElementById("answers");
+    btn.onclick = () => {
+      if(index === q.correct) {
+        score++;
+      }
+      nextQuestion();
+    };
 
-answersDiv.innerHTML = "";
-
-q.answers.forEach((answer,index)=>{
-
-const btn = document.createElement("button");
-
-btn.innerText = answer;
-
-btn.onclick = ()=>{
-
-if(index === q.correct){
-alert("Correct Answer");
-}else{
-alert("Wrong Answer");
+    answersDiv.appendChild(btn);
+  });
 }
 
-currentQuestion++;
+function nextQuestion() {
+  currentQuestion++;
 
-if(currentQuestion < quizData.length){
+  if(currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    document.getElementById("quiz-box").innerHTML = `
+      <h2>Quiz Finished!</h2>
+      <h3>Your Score: ${score}/${quizData.length}</h3>
+    `;
+  }
+}
+
 loadQuestion();
-}else{
-document.getElementById("quiz-box").innerHTML =
-"<h2>Quiz Finished</h2>";
+
+// CGPA CALCULATOR
+
+function calculateCGPA() {
+  let g1 = parseFloat(document.getElementById("g1").value) || 0;
+  let g2 = parseFloat(document.getElementById("g2").value) || 0;
+  let g3 = parseFloat(document.getElementById("g3").value) || 0;
+
+  let cgpa = ((g1 + g2 + g3) / 3).toFixed(2);
+
+  document.getElementById("cgpa-result").innerText = "Your CGPA: " + cgpa;
 }
 
-};
-
-answersDiv.appendChild(btn);
-
-});
-
-}
-
-if(document.getElementById("question")){
-loadQuestion();
-}
-
-// CGPA
-
-function calculateCGPA(){
-
-let g1 = parseFloat(document.getElementById("g1").value)||0;
-
-let g2 = parseFloat(document.getElementById("g2").value)||0;
-
-let g3 = parseFloat(document.getElementById("g3").value)||0;
-
-let cgpa = ((g1+g2+g3)/3).toFixed(2);
-
-document.getElementById("cgpa-result").innerText =
-"Your CGPA: " + cgpa;
-
-}
-
-// TIMER
+// STUDY TIMER
 
 let timeLeft = 1500;
-
 let timer;
 
-function updateTimer(){
+function updateTimer() {
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
 
-let minutes = Math.floor(timeLeft/60);
+  seconds = seconds < 10 ? "0" + seconds : seconds;
 
-let seconds = timeLeft%60;
-
-seconds = seconds < 10 ? "0"+seconds : seconds;
-
-document.getElementById("time").innerText =
-`${minutes}:${seconds}`;
-
+  document.getElementById("time").innerText = `${minutes}:${seconds}`;
 }
 
-function startTimer(){
+function startTimer() {
+  clearInterval(timer);
 
-clearInterval(timer);
-
-timer = setInterval(()=>{
-
-if(timeLeft > 0){
-timeLeft--;
-updateTimer();
+  timer = setInterval(() => {
+    if(timeLeft > 0) {
+      timeLeft--;
+      updateTimer();
+    }
+  }, 1000);
 }
 
-},1000);
-
+function resetTimer() {
+  clearInterval(timer);
+  timeLeft = 1500;
+  updateTimer();
 }
-
-function resetTimer(){
-
-clearInterval(timer);
-
-timeLeft = 1500;
 
 updateTimer();
-
-}
-
-if(document.getElementById("time")){
-updateTimer();
-}
-
-// SIGNUP
-
-function signupUser(){
-
-const name =
-document.getElementById("signupName").value;
-
-const email =
-document.getElementById("signupEmail").value;
-
-const password =
-document.getElementById("signupPassword").value;
-
-const user = {
-name,
-email,
-password
-};
-
-localStorage.setItem(
-"studentHubUser",
-JSON.stringify(user)
-);
-
-alert("Signup Successful");
-
-window.location.href = "login.html";
-
-}
-
-// LOGIN
-
-function loginUser(){
-
-const email =
-document.getElementById("loginEmail").value;
-
-const password =
-document.getElementById("loginPassword").value;
-
-const savedUser =
-JSON.parse(localStorage.getItem("studentHubUser"));
-
-if(
-savedUser &&
-email === savedUser.email &&
-password === savedUser.password
-){
-alert("Login Successful");
-
-window.location.href = "dashboard.html";
-
-}else{
-
-alert("Invalid Email or Password");
-
-}
-
-}
-
-// LOGOUT
-
-function logoutUser(){
-
-alert("Logged Out");
-
-window.location.href = "login.html";
-
-}
